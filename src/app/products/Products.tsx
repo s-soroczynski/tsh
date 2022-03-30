@@ -1,13 +1,43 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { AppRoute } from 'routing/AppRoute.enum';
+import { Grid, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
-export const Products = () => {
+import { Product } from './Product'
+
+import { ProductInterface } from './Product.interface'
+interface ProductsProps {
+    items: ProductInterface[]
+}
+
+export const Products = (props: ProductsProps) => {
+  const { items } = props;
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('lg'));
+  const conditionalProps = matches ?
+    {
+      container: true,
+      spacing: 3
+    }   
+    : {}
+
+
   return (
-    <>
-      <h2>Products page</h2>
-      <Link to={AppRoute.Login}> Login </Link>
-    </>
+    <Grid
+      { ...conditionalProps }
+      sx={{
+        pb: {
+          sm: 5,
+          lg: 7
+        }
+      }}
+    >
+      {items.map((item)=> {
+        return <Product
+          item={ item }
+          key={ item['id'] }
+        />
+      })}
+    </Grid>
   );
 };

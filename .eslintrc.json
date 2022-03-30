@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "plugin:react/recommended",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "indent": [2, 2],
+        "react/jsx-max-props-per-line": [1, { "maximum": 1, "when": "always" }],
+        "react/jsx-tag-spacing": [1, { "beforeSelfClosing": "always" }],
+        "react/jsx-closing-bracket-location": [1, "line-aligned"],
+        "react/jsx-indent": [1, 2],
+        "react/jsx-indent-props": [1, "first"],
+        "react/jsx-first-prop-new-line": [1, "multiline"],
+        "object-curly-spacing": [1, "always"],
+        "react/jsx-curly-spacing": [2, { "when": "always", "spacing": { "objectLiterals": "never" } }]
+        // "react/jsx-uses-vars": 1
+        // "react/jsx-uses-react": 1
+        // "space-before-blocks": 1
+    }
+}

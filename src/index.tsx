@@ -6,10 +6,18 @@ import { AppProviders } from 'providers/AppProviders';
 import { App } from './app/App';
 import * as serviceWorker from './serviceWorker';
 
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { theme } from './styles/theme'
+
+
 ReactDOM.render(
-  <AppProviders>
-    <App />
-  </AppProviders>,
+  <ThemeProvider theme={ theme }>
+    <CssBaseline />
+    <AppProviders>
+      <App />
+    </AppProviders>
+  </ThemeProvider>,
   document.getElementById('root'),
 );
 
