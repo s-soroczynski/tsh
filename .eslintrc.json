@@ -3,7 +3,10 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "plugin:react/recommended",
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -26,8 +29,5 @@
         "react/jsx-first-prop-new-line": [1, "multiline"],
         "object-curly-spacing": [1, "always"],
         "react/jsx-curly-spacing": [2, { "when": "always", "spacing": { "objectLiterals": "never" } }]
-        // "react/jsx-uses-vars": 1
-        // "react/jsx-uses-react": 1
-        // "space-before-blocks": 1
     }
 }
