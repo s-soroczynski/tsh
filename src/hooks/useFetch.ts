@@ -1,4 +1,3 @@
-// interface
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import { UseFetchResponseInterface } from './useFetchResponse.interface'
@@ -17,7 +16,12 @@ export function useFetch<T>(url: string): UseFetchResponseInterface<T> {
       cancelToken: source.token
     })
       .then(({ data }) => {
-        setResponse(data)
+        setError(null)
+        if (data && data.items && data.items.length > 0) {
+          setResponse(data)
+        } else {
+          setResponse(null)
+        }
       })
       .catch((error) => {
         setError(error)
@@ -25,7 +29,6 @@ export function useFetch<T>(url: string): UseFetchResponseInterface<T> {
       .finally(() => {
         setLoading(false)
       })
-
     return () => {
       source.cancel()
     }

@@ -1,22 +1,23 @@
 import { createTheme } from '@mui/material/styles';
-import { customColors } from './customColors'
+
+import { CustomColors, CustomBreakpoints } from './custom'
 import { ThemeOptions } from './theme.interface'
 
 export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 375,
+      sm: CustomBreakpoints.sm,
       md: 900,
-      lg: 1224,
+      lg: CustomBreakpoints.lg,
       xl: 1536,
     },
   },
   palette: {
     text: {
-      primary: customColors.grey5
+      primary: CustomColors.grey5
     },
-    ...customColors
+    ...CustomColors
   },
   typography: {
     fontFamily: "'Nunito', 'Roboto', 'Helvetica', 'Arial', sans-serif",
@@ -25,26 +26,40 @@ export const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#F0F1F5"
+          backgroundColor: CustomColors.grey1
         }
       }
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          "&::placeholder": {
+            color: CustomColors.grey5,
+          }
+        },
+      },
     },
     MuiButton:{
       styleOverrides: {
         root: {
           "&:disabled": {
-            color: '#fff',
-            backgroundColor: '#9194A5',
+            color: CustomColors.white1,
+            backgroundColor: CustomColors.grey4,
           }
         },
+        outlined: {
+          color: CustomColors.blue1,
+          backgroundColor: CustomColors.white1,  
+          borderColor: CustomColors.blue1,
+        },
         contained:{
-          color: '#fff',
-          backgroundColor: '#4460F7',
+          color: CustomColors.white1,
+          backgroundColor: CustomColors.blue1,
           '&:hover': {
-            backgroundColor: '#2140E8',
+            backgroundColor: CustomColors.blue2,
             // Reset on touch devices, it doesn't add specificity
             '@media (hover: none)': {
-              backgroundColor: '#4460F7',
+              backgroundColor: CustomColors.blue1,
             },
           }
         },
@@ -56,6 +71,13 @@ export const theme = createTheme({
           fontWeight: '600',
         }
       },
-    }
+    },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'rgb(26, 27, 29, 0.9)',
+        },
+      },
+    },
   }
 } as ThemeOptions);

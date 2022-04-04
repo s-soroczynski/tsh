@@ -4,10 +4,10 @@ import {
   Theme as ThemeMUI,
   ThemeOptions as ThemeOptionsMUI,
 } from "@mui/material/styles";
-import { CustomColors } from './customColors'
+import { CustomColorInterface } from './custom'
 
-interface PaletteOptions extends PaletteOptionsMUI, CustomColors {}
-interface Palette extends PaletteMUI, CustomColors {}
+interface PaletteOptions extends PaletteOptionsMUI, CustomColorInterface {}
+interface Palette extends PaletteMUI, CustomColorInterface {}
 
 export interface Theme extends ThemeMUI {
   palette: Palette;
