@@ -27,6 +27,7 @@ export const Filters = () => {
   const [state, setState] = useState<FiltersState>(defaultFilters)
 
   const handleFilterToUrl = useCallback((filter: FiltersState, params: URLSearchParams) => {
+    params.set('page', '1')
     for (const key in filter) {
       if (isFilterFilled(filter[key])) {
         params.set(key, String(filter[key]))

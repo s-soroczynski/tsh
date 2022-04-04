@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, screen } from 'tests';
+import { render } from 'tests';
 import '@testing-library/jest-dom'
 
 import { ProductsEmpty } from '../ProductsEmpty';

@@ -1,15 +1,23 @@
 import React, { memo } from 'react';
 
 import { Grid, Container, Button } from '@mui/material';
-import { Avatar } from 'components/avatar/Avatar';
 import { Logo } from 'components/logo/Logo'
 import { Filters } from './filters/Filters'
 
 export const Header = memo(() => {
+  const renderButton = () => (
+    <Button
+      variant="outlined"
+      sx={{ minWidth: 88, fontSize: 14, textTransform: 'capitalize', borderRadius: '4px' }}
+    >
+      Log in
+    </Button>
+  )
+
   return (
     <Container
       maxWidth={ false }
-      sx={{ backgroundColor: '#fff', pt: 6.5, pb: 3, px: 3, }}
+      sx={{ backgroundColor: '#fff', pt: 6.5, pb: { xs: 3, lg: 6 }, px: 3, }}
     >
       <Container
         maxWidth="lg"
@@ -31,10 +39,7 @@ export const Header = memo(() => {
             justifyContent="flex-end"
             xs={ 6 }
           >
-            <Button
-              variant="outlined"
-              sx={{ minWidth: 88, fontSize: 14 }}
-            >Log in</Button>
+            {renderButton()}
           </Grid>
           <Grid
             item
@@ -49,7 +54,6 @@ export const Header = memo(() => {
         <Grid
           container
           alignItems="center"
-          columns={ 18 }
           justifyContent="space-between"
           display={{ xs: 'none', lg: 'flex' }}
         >
@@ -73,10 +77,7 @@ export const Header = memo(() => {
             justifyContent="flex-end"
             lg={ 1 }
           >
-            <Button
-              variant="outlined"
-              sx={{ minWidth: 88, fontSize: 14 }}
-            >Log in</Button>
+            {renderButton()}
           </Grid>
         </Grid>
       </Container>

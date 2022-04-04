@@ -46,7 +46,7 @@ export const ProductCard = memo((props: ProductCardProps) => {
         <Card sx={{ maxWidth: 327, height: 400, boxShadow: 'none', bgcolor: '#fff', borderRadius: '8px', p: 0, position: 'relative' }}>
           {
             (promo && active) && <Chip
-              sx={{ position: 'absolute', zIndex: 10, borderRadius: 0, top: 16, bgcolor: '#F9A52B', fontWeight: '600', color: '#fff', fontSize: 14, width: 75 }}
+              sx={{ position: 'absolute', zIndex: 10, borderRadius: 0, top: 16, bgcolor: '#F9A52B', fontWeight: '600', color: '#fff', fontSize: 14, width: 75, height: 24 }}
               label="Promo"
             />
           }

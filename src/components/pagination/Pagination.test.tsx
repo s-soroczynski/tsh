@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { render, screen, fireEvent } from 'tests';
+import { render, fireEvent } from 'tests';
 import '@testing-library/jest-dom'
 
 import { Pagination, PaginationProps } from './Pagination';
@@ -50,8 +50,8 @@ describe('Pagination.test', () => {
       { ...props }
       totalPages={ 3 }
     />)
-    expect(screen.getByText('1')).toBeInTheDocument()
-    expect(screen.getByText('2')).toBeInTheDocument()
-    expect(screen.getByText('3')).toBeInTheDocument()
+    expect(getByText('1')).toBeInTheDocument()
+    expect(getByText('2')).toBeInTheDocument()
+    expect(getByText('3')).toBeInTheDocument()
   });
 });

@@ -50,7 +50,7 @@ export const ProductsContainer = () => {
           sx={{
             pt: {
               xs: 5,
-              lg: 14
+              lg: 7
             }
           }}
         >

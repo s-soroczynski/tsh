@@ -13,7 +13,7 @@ export const ProductsEmpty = () => {
       justifyContent="center"
       sx={{
         height: 344,
-        mt: { xs: 3, lg: 7 },
+        mt: { xs: 3, lg: 0 },
         
       }}
     >

@@ -71,6 +71,13 @@ export const theme = createTheme({
           fontWeight: '600',
         }
       },
-    }
+    },
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'rgb(26, 27, 29, 0.9)',
+        },
+      },
+    },
   }
 } as ThemeOptions);
